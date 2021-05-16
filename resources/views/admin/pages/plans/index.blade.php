@@ -15,7 +15,7 @@
             #filtros
         </div>
     
-        <div class="card-bory">
+        <div class="card-body">
             <table class="table table condensed">
                 <thead>
                     <th>Nome</th>
@@ -36,5 +36,9 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div class="card-footer">
+        {!! $plans->links() !!}
     </div>
 @stop
