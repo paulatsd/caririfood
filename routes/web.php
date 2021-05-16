@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Admin\{
+    PlanController
+};
+
+
+Route::get('admin/planos', [PlanController::class, 'index'])->name('plans.index');
 
 Route::get('/', function () {
     return view('welcome');
