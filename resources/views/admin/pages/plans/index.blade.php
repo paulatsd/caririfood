@@ -1,13 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', 'Cariri Food')
+@section('title', 'Planos Cariri Food')
 
 @section('content_header')
-    <h1>Planos</h1>
+    <h1>Planos <a href=" {{ route('plans.create') }}" class="btn btn-dark">ADD</a></h1>
 @stop
 
 @section('content')
-    <p>Listagens dos planos do Cariri Food.</p>
 
     <div class="card">
 
