@@ -11,7 +11,15 @@
     <div class="card">
 
         <div class="card-header">
-            #filtros
+
+            <form action=" {{ route('plans.search') }}" method="post" class="form form-inline">
+                @csrf
+
+                <input type="text" name="filter" class="form-control" value=" {{ $filters['filter'] ?? '' }}">
+                <button type="submit" class="btn btn-dark">Buscar</button>
+                
+            </form>
+
         </div>
     
         <div class="card-body">
@@ -38,6 +46,12 @@
     </div>
 
     <div class="card-footer">
-        {!! $plans->links() !!}
+
+        @if (isset($filters))
+            {!! $plans->appends($filters)->links() !!}
+        @else
+            {!! $plans->links() !!}    
+        @endif
+        
     </div>
 @stop
