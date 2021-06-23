@@ -226,7 +226,8 @@ return [
     'menu' => [
         [
             'text' => 'Planos',
-            'url' => 'admin/planos'
+            'url' => 'admin/planos',
+            'icon'  => 'fas fa-clipboard-list',
         ],
         [
             'text' => 'blog',

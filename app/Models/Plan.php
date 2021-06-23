@@ -15,7 +15,7 @@ class Plan extends Model
 
        $results = $this->where('name', 'ILIKE', "%{$filter}%")
                        ->orWhere('description', 'ILIKE', "%{$filter}%")
-                       ->paginate(1);
+                       ->paginate();
 
        return $results;
     }
