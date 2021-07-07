@@ -13,11 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Admin\{
+    DetailPlanController,
     PlanController
 };
 
 Route::prefix('admin')->group(function(){
 
+    /**
+     * Routes Details Plans
+     */
+    Route::get('planos/{url}/details', [DetailPlanController::class, 'index'])->name('details.plan.index');
+
+    /**
+     * Routes Plans
+     */
     Route::put('planos/{url}', [PlanController::class, 'update'])->name('plans.update');
     Route::get('planos/{url}/edit', [PlanController::class, 'edit'])->name('plans.edit');
     Route::any('planos/search', [PlanController::class, 'search'])->name('plans.search');
@@ -27,6 +36,9 @@ Route::prefix('admin')->group(function(){
     Route::get('planos/{url}', [PlanController::class, 'show'])->name('plans.show');
     Route::delete('planos/{url}', [PlanController::class, 'destroy'])->name('plans.destroy');
 
+    /**
+     * Routes Dashboard
+     */
     Route::get('/', [PlanController::class, 'index'])->name('admin.index');
 
 });
