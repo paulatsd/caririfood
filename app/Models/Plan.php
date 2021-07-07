@@ -11,6 +11,9 @@ class Plan extends Model
 
     protected $fillable = ['name', 'url', 'price', 'description'];
 
+    /**
+     * Relacionamento um para muitos: um plano pode ter um ou muitos detalhes
+     */
     public function details(){
         return $this->hasMany(DetailPlan::class);
     }
