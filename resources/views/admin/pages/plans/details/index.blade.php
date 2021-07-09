@@ -11,7 +11,7 @@
         <li class="breadcrumb-item active"><a href=" {{ route('details.plan.index', $plan->url) }}" class="active">Detalhes do plano</a></li>
     </ol>
 
-    <h1>Detalhes do plano <em> {{ $plan->name }} </em> <a href=" {{ route('plans.create') }}" class="btn btn-dark">ADD</a></h1>
+    <h1>Detalhes do plano <em> {{ $plan->name }} </em> <a href=" {{ route('details.plan.create', $plan->url) }}" class="btn btn-dark">ADD</a></h1>
 @stop
 
 @section('content')

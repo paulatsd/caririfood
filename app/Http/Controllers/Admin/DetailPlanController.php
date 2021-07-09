@@ -26,16 +26,41 @@ class DetailPlanController extends Controller
             return redirect()->back();
         }
 
-        // $details = $plan->details();
-
         $details = $plan->details()->paginate();
-
-        // dd($details);
-
 
         return view('admin.pages.plans.details.index', [
             'plan' => $plan,
             'details' => $details
         ]);
+    }
+
+    public function create($urlPlan)
+    {
+
+        if (!$plan = $this->plan->where('url', $urlPlan)->first()){
+            return redirect()->back();
+        }
+
+        return view('admin.pages.plans.details.create', [
+            'plan' => $plan
+        ]);
+
+    }
+
+    public function store(Request $request, $urlPlan)
+    {
+
+        if (!$plan = $this->plan->where('url', $urlPlan)->first()){
+            return redirect()->back();
+        }
+
+        // $dados = $request->all();
+        // $dados['plan_id'] = $plan->id;
+        // $this->repository->create($dados);
+
+        $plan->details()->create($request->all());
+
+        return redirect()->route('details.plan.index', $plan->url);
+
     }
 }

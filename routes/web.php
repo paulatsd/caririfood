@@ -22,6 +22,8 @@ Route::prefix('admin')->group(function(){
     /**
      * Routes Details Plans
      */
+    Route::post('planos/{url}/details', [DetailPlanController::class, 'store'])->name('details.plan.store');
+    Route::get('planos/{url}/details/create', [DetailPlanController::class, 'create'])->name('details.plan.create');
     Route::get('planos/{url}/details', [DetailPlanController::class, 'index'])->name('details.plan.index');
 
     /**
