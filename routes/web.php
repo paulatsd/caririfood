@@ -23,13 +23,13 @@ Route::prefix('admin')->group(function(){
      * Routes Details Plans
      */
 
-    Route::delete('planos/{url}/details/{idDetail}', [DetailPlanController::class, 'destroy'])->name('details.plan.destroy');
-    Route::get('planos/{url}/details/{idDetail}', [DetailPlanController::class, 'show'])->name('details.plan.show');
     Route::put('planos/{url}/details/{idDetail}', [DetailPlanController::class, 'update'])->name('details.plan.update');
     Route::get('planos/{url}/details/{idDetail}/edit', [DetailPlanController::class, 'edit'])->name('details.plan.edit');
     Route::post('planos/{url}/details', [DetailPlanController::class, 'store'])->name('details.plan.store');
     Route::get('planos/{url}/details/create', [DetailPlanController::class, 'create'])->name('details.plan.create');
     Route::get('planos/{url}/details', [DetailPlanController::class, 'index'])->name('details.plan.index');
+    Route::delete('planos/{url}/details/{idDetail}', [DetailPlanController::class, 'destroy'])->name('details.plan.destroy');
+    Route::get('planos/{url}/details/{idDetail}', [DetailPlanController::class, 'show'])->name('details.plan.show');
 
     /**
      * Routes Plans
