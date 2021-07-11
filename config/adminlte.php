@@ -230,16 +230,11 @@ return [
             'icon'  => 'fas fa-clipboard-list',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Perfis',
+            'url'  => 'admin/profiles',
+            'icon' => 'fas fa-address-book'
+            // 'icon' => 'fas fa-address-card'
+            // 'icon' => 'fas fa-id-card'
         ],
         [
             'text'    => 'multilevel',
