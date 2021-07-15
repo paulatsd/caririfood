@@ -14,10 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Admin\{
     DetailPlanController,
-    PlanController
+    PlanController,
+    ProfileController
 };
 
 Route::prefix('admin')->group(function(){
+
+    /**
+     * Routes Profiles
+     */
+    
+    Route::any('profiles/search', [ProfileController::class, 'search'])->name('profiles.search');
+    Route::resource('profiles', ProfileController::class);
+   
 
     /**
      * Routes Details Plans
