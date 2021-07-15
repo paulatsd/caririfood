@@ -14,12 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\Admin\{
     DetailPlanController,
+    PermissionController,
     PlanController,
     ProfileController
 };
 
 Route::prefix('admin')->group(function(){
 
+    
+    /**
+     * Routes Profiles
+     */
+    
+    Route::any('permissions/search', [PermissionController::class, 'search'])->name('permissions.search');
+    Route::resource('permissions', PermissionController::class);
+    
     /**
      * Routes Profiles
      */

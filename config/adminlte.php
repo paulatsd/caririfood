@@ -237,6 +237,13 @@ return [
             // 'icon' => 'fas fa-id-card'
         ],
         [
+            'text' => 'Permissões',
+            'url'  => 'admin/permissions',
+            'icon' => 'fas fa-lock'
+            // 'icon' => 'fas fa-address-card'
+            // 'icon' => 'fas fa-id-card'
+        ],
+        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
