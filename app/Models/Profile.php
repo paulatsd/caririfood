@@ -12,4 +12,12 @@ class Profile extends Model
     protected $table = 'profiles';
 
     protected $fillable = ['name', 'description'];
+
+    /**
+     * Relationship N x N with permissions
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
+    }
 }
