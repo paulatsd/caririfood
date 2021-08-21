@@ -43,9 +43,8 @@ class PermissionProfileController extends Controller
         }
 
         // $permissions = $profile->permissions()->paginate();
-        $permissions = $this->permission->paginate();
-
-        // dd($permissions);
+        // $permissions = $this->permission->paginate();
+        $permissions = $profile->permissionsAvaliable(); //traz as permissões não adicionais ao perfil
 
         return view('admin.pages.profiles.permissions.avaliable', [
             'profile' => $profile,
